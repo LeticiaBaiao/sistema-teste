@@ -7,7 +7,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const userToken = localStorage.getItem("user_token");
-    const usersStorage = localStorage.getItem("users_storage");
+    const usersStorage = localStorage.getItem("users_bd");
 
     if (userToken && usersStorage) {
       const hasUser = JSON.parse(usersStorage)?.filter(
@@ -19,7 +19,8 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const signin = (email, password) => {
-    const usersStorage = JSON.parse(localStorage.getItem("users_storage"));
+    const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
+
     const hasUser = usersStorage?.filter((user) => user.email === email);
 
     if (hasUser?.length) {
@@ -37,11 +38,12 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signup = (email, password) => {
-    const usersStorage = JSON.parse(localStorage.getItem("users_storage"));
+    const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
+
     const hasUser = usersStorage?.filter((user) => user.email === email);
 
     if (hasUser?.length) {
-      return "E-mail já cadastrado";
+      return "Já tem uma conta com esse E-mail";
     }
 
     let newUser;
@@ -52,7 +54,8 @@ export const AuthProvider = ({ children }) => {
       newUser = [{ email, password }];
     }
 
-    localStorage.setItem("users_storage", JSON.stringify(newUser));
+    localStorage.setItem("users_bd", JSON.stringify(newUser));
+
     return;
   };
 

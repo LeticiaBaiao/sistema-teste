@@ -19,7 +19,7 @@ const Signup = () => {
       setError("Preencha todos os campos");
       return;
     } else if (email !== emailConf) {
-      setError("Os e-mails não correspondem");
+      setError("Os e-mails não são iguais");
       return;
     }
 
@@ -40,13 +40,13 @@ const Signup = () => {
       <C.Content>
         <Input
           type="email"
-          placeholder="Digite seu email"
+          placeholder="Digite seu E-mail"
           value={email}
           onChange={(e) => [setEmail(e.target.value), setError("")]}
         />
         <Input
           type="email"
-          placeholder="Confirme seu email"
+          placeholder="Confirme seu E-mail"
           value={emailConf}
           onChange={(e) => [setEmailConf(e.target.value), setError("")]}
         />
