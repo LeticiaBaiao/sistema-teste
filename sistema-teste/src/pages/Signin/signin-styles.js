@@ -23,14 +23,8 @@ export const Content = styled.div`
   border-radius: 5px;
 `;
 
-export const Label = styled.label`
-  font-size: 18px;
-  font-weight: 600;
-  color: #676767;
-`;
-
 export const LabelSignup = styled.label`
-  font-size: 16px;
+  font-size: 12px;
   color: #676767;
 `;
 
@@ -44,6 +38,6 @@ export const Strong = styled.strong`
 
   a {
     text-decoration: none;
-    color: #676767;
+    color: #8b0329;
   }
 `;

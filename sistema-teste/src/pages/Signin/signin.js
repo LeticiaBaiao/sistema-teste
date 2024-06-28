@@ -31,7 +31,6 @@ const Signin = () => {
 
   return (
     <C.Container>
-      <C.Label>SISTEMA DE LOGIN</C.Label>
       <C.Content>
         <Input
           type="email"

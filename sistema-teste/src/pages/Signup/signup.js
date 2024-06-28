@@ -36,7 +36,6 @@ const Signup = () => {
 
   return (
     <C.Container>
-      <C.Label>SISTEMA DE LOGIN</C.Label>
       <C.Content>
         <Input
           type="email"
@@ -57,7 +56,7 @@ const Signup = () => {
           onChange={(e) => [setSenha(e.target.value), setError("")]}
         />
         <C.labelError>{error}</C.labelError>
-        <Button Text="Inscrever-se" onClick={handleSignup} />
+        <Button Text="Cadastrar" onClick={handleSignup} />
         <C.LabelSignin>
           Já tem uma conta?
           <C.Strong>
